@@ -318,10 +318,10 @@
 % v1.1.4: fixes inconsistent font size
 % v1.7: adds accsupp ActualText for location and date markers
 \newcommand{\cvevent}[4]{%
-  {\large\color{emphasis}#1\par}
+  {\large\color{emphasis}#1}
   \smallskip\normalsize
   \ifstrequal{#2}{}{}{
-  \textbf{\color{accent}#2}\par
+  \hfill\textbf{\color{accent}#2}\par
   \smallskip}
   \ifstrequal{#3}{}{}{%
     {\small\makebox[0.5\linewidth][l]%
@@ -330,7 +330,7 @@
     }}%
   \ifstrequal{#4}{}{}{%
     {\small\makebox[0.5\linewidth][l]%
-      {\BeginAccSupp{method=pdfstringdef,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
+      {\hfill\BeginAccSupp{method=pdfstringdef,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
         ~#4}%
     }}\par
   \medskip\normalsize
